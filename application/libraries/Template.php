@@ -15,6 +15,15 @@ class Template {
 
 		$this->CI->load->view('templates/main.php', $data);
 	}
+
+	function auth($content, $data = NULL)
+	{
+		// $data['header'] = $this->CI->load->view('templates/header', $data, TRUE);
+		$data['content'] = $this->CI->load->view($content, $data, TRUE);
+		// $data['footer'] = $this->CI->load->view('templates/footer', $data, TRUE);
+
+		$this->CI->load->view('templates/template_auth.php', $data);
+	}
 }
 
 
